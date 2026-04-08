@@ -5,48 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Meral Hamarat | Portfolyo</title>
 
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-dark': '#1e3932',
-                        'brand-green': '#2c5545',
-                        'brand-yellow': '#f3a712',
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        /* Kaydırma ve Navbar Ayarı */
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
-        body { font-family: 'Poppins', sans-serif; }
-
-        .hero-blob {
-            position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 110%; height: 110%;
-            background-color: #f3a712;
-            border-radius: 50%; z-index: -1;
-        }
-
-        .progress-ring {
-            background: conic-gradient(var(--tw-text-opacity, #f3a712) var(--progress), #e5e7eb 0deg);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-        }
-    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
 
