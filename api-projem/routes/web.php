@@ -32,3 +32,6 @@ Route::get('/api-test', function () {
 
     return "Sinyal başarıyla gönderildi! Paneldeki Olaylar (Events) kısmını kontrol et.";
 });
+Route::get('/projects/create', function () {
+    return "Burada proje ekleme formu olacak.";
+})->name('projects.create');

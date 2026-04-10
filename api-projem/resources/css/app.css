@@ -1,37 +1,84 @@
+@import "tailwindcss";
+
+/* 1. Font Import - En Üstte Olmalı */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* 1. Tailwind Kurulumu */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* 3. Genel Ayarlar */
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+/* 2. Değişken Tanımlamaları */
+:root {
+    --brand-dark: #1e3932;
+    --brand-green: #2c5545;
+    --brand-yellow: #f3a712;
+    --white: #ffffff;
+    --gray-light: #f9fafb;
+    --gray-text: #4b5563;
 }
 
-body {
+/* 3. Sayfa Genel Ayarları (Beyazlıkları Öldürür) */
+body, html {
+    background-color: var(--brand-dark); /* Sayfa zemini hep koyu kalsın */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
     font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    line-height: 1.5;
+    scroll-behavior: smooth;
 }
 
-/* 4. Özel Tasarım */
+/* 4. Navbar & Genel Renk Sınıfları */
+.bg-brand-dark { background-color: var(--brand-dark); }
+.bg-brand-green { background-color: var(--brand-green); }
+.text-brand-yellow { color: var(--brand-yellow); }
+.text-brand-dark { color: var(--brand-dark); } /* Balon yazıları siyah olsun diye */
+.text-white { color: var(--white); }
+
+/* 5. Profil Fotoğrafı Arkasındaki Sarı Blob */
 .hero-blob {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 110%;
-    height: 110%;
-    background-color: #f3a712;
+    width: 105%; /* Fotoğraftan biraz daha geniş */
+    height: 105%;
+    background-color: var(--brand-yellow);
     border-radius: 50%;
     z-index: -1;
+    filter: blur(2px); /* Daha yumuşak bir geçiş için hafif blur */
 }
 
+/* 6. Yetkinlikler - Progress Ring */
 .progress-ring {
-    background: conic-gradient(var(--tw-text-opacity, #f3a712) var(--progress), #e5e7eb 0deg);
+    /* Tailwind'in --progress değişkenini Blade'den alıyor */
+    background: conic-gradient(var(--brand-yellow) var(--progress, 0deg), rgba(255,255,255,0.1) 0deg);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+/* 7. Özel Buton Stili (Eski tasarımdan kalan) */
+.btn-primary {
+    background-color: var(--brand-yellow);
+    color: var(--brand-dark);
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(243, 167, 18, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* 8. Genel Section Boşlukları */
+section {
+    position: relative;
+    width: 100%;
 }
